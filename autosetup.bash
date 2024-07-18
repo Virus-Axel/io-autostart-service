@@ -1,5 +1,5 @@
 # If any of these environment variables are empty.
-if [ [ -z "${IO_DEVICE_ID}" ] || [ -z ${IO_USER_ID} ] || [ -z ${IO_DEVICE_NAME} ] || [ -z ${IO_AUTH_TOKEN} ] ]; then
+if [ -z "${IO_DEVICE_ID}" ]  || [ -z "${IO_USER_ID}" ] || [ -z "${IO_DEVICE_NAME}" ] || [ -z "${IO_AUTH_TOKEN}"  ]; then
 	echo 'Make sure variables are set'
 else
 	curl -L https://github.com/ionet-official/io-net-official-setup-script/raw/main/ionet-setup.sh -o ionet-setup.sh
@@ -17,3 +17,4 @@ else
 		sleep 10
 	done
 fi
+
