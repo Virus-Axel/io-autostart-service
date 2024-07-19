@@ -1,0 +1,25 @@
+[Unit]
+After=network.target
+Description=IO container autostart service
+
+[Service]
+# Enter device ID below
+Environment="IO_DEVICE_ID="
+
+# Enter user ID below
+Environment="IO_USER_ID="
+
+# Enter device name below
+Environment="IO_DEVICE_NAME="
+
+# Enter authentication token below
+Environment="IO_AUTH_TOKEN="
+
+ExecStart='curl https://raw.githubusercontent.com/Virus-Axel/io-autostart-service/master/autosetup.bash | bash'
+
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+Alias=io-autostart
+WantedBy=default.target
